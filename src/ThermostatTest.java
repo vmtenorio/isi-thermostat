@@ -38,5 +38,21 @@ public class ThermostatTest {
 		t.down();
 		assertTrue("Falla e7", t.getPartOfDay() == Wake && t.getTemp() == Low);
 	}
+	
+	//Test para e8 -> e11
+	@Test
+	public void test3() {
+		t.down();
+		assertTrue("Falla e8", t.getPartOfDay() == Wake && t.getTemp() == Low);
+		t.up();
+		t.up();
+		assertTrue("Falla e9", t.getPartOfDay() == Wake && t.getTemp() == High);
+		t.advance();
+		t.up();
+		assertTrue("Falla e10", t.getPartOfDay() == Sleep && t.getTemp() == High);
+		t.down();
+		t.down();
+		assertTrue("Falla e11", t.getPartOfDay() == Sleep && t.getTemp() == Low);
+	}
 
 }
