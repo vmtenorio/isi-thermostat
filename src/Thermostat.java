@@ -16,5 +16,29 @@ public class Thermostat {
 		partOfDay = PartOfDay.Wake;
 		temp = Temp.Low;
 	}
+	
+	public PartOfDay getPartOfDay () {
+		return partOfDay;
+	}
+	
+	public Temp getTemp () {
+		return temp;
+	}
+	
+	public void advance () {
+		if (partOfDay == PartOfDay.Sleep) {
+			partOfDay = PartOfDay.Wake;
+		} else {
+			partOfDay = PartOfDay.Sleep;
+		}
+	}
+	
+	public void up () {
+		temp = Temp.High;
+	}
+	
+	public void down () {
+		temp = Temp.Low;
+	}
 
 }
