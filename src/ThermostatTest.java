@@ -15,6 +15,7 @@ public class ThermostatTest {
 	// Test para e0 -> e3
 	@Test
 	public void test1() {
+		assertTrue("Falla la asignacion inicial", t.getPartOfDay() == Wake && t.getTemp() == Low);
 		t.up();
 		assertTrue("Falla e0", t.getPartOfDay() == Wake && t.getTemp() == High);
 		t.advance();
@@ -22,7 +23,19 @@ public class ThermostatTest {
 		t.down();
 		assertTrue("Falla e2", t.getPartOfDay() == Sleep && t.getTemp() == Low);
 		t.advance();
-		assertTrue("Falla e3", t.getPartOfDay() == Wake && t.getTemp() == High);
+		assertTrue("Falla e3", t.getPartOfDay() == Wake && t.getTemp() == Low);
+	}
+	
+	//Test para e4 -> e7
+	public void test2() {
+		t.advance();
+		assertTrue("Falla e4", t.getPartOfDay() == Sleep && t.getTemp() == Low);
+		t.up();
+		assertTrue("Falla e5", t.getPartOfDay() == Sleep && t.getTemp() == High);
+		t.advance();
+		assertTrue("Falla e6", t.getPartOfDay() == Wake && t.getTemp() == High);
+		t.down();
+		assertTrue("Falla e7", t.getPartOfDay() == Wake && t.getTemp() == Low);
 	}
 
 }
