@@ -27,6 +27,7 @@ public class ThermostatTest {
 	}
 	
 	//Test para e4 -> e7
+	@Test
 	public void test2() {
 		t.advance();
 		assertTrue("Falla e4", t.getPartOfDay() == Sleep && t.getTemp() == Low);
