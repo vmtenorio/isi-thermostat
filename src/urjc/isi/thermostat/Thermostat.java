@@ -1,3 +1,4 @@
+package urjc.isi.thermostat;
 
 public class Thermostat {
 	
